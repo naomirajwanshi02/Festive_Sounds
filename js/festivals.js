@@ -16,4 +16,4 @@ export const FESTIVALS = [
 
 // ?demo=1 jumps straight to the festival's "You can begin!" note,
 // because the picture has already been recognised here.
-export const openUrl = (f) => f.url + '?demo=1';
+export const openUrl = (f) => f.url + '?demo=1&from=hub';

@@ -23,34 +23,21 @@
 
 <section id="perm" class="screen">
   <div class="plate">
-    <h1>Festive Sounds · 祭</h1>
+    <h1>Festive Sounds</h1>
     <p>Scan a festival picture with your camera to hear its festive sounds: <b>Nebuta</b> or <b>Gion Matsuri</b>. Tap the button, then choose <b>Allow</b>.</p>
     <button class="btn" id="permBtn">Allow camera</button>
     <div class="status" id="permStatus"></div>
-    <a class="btn ghost small" href="?pick=1">No camera? Choose a festival</a>
   </div>
 </section>
 
 <div id="guide" class="overlay">
-  <div class="scan-top plate"><b>Scan a festival picture</b><span class="cap">Nebuta or Gion Matsuri: the right sounds open on their own</span></div>
+  <div class="scan-top plate"><b>Scan a festival picture</b><span class="cap">Nebuta or Gion Matsuri, the right sounds open</span></div>
   <div class="frame"><i></i><i></i><i></i><i></i><div class="sweep"></div></div>
   <div class="scan-bottom">
     <div class="status" id="scanStatus">Starting camera…</div>
-    <div class="row">
-      <button class="btn ghost small" id="scanRetry" hidden>Try again</button>
-      <button class="btn ghost small" id="scanSkip">No picture? Choose</button>
-    </div>
   </div>
 </div>
 
-<section id="pick" class="screen">
-  <div class="plate">
-    <h1>Choose a festival</h1>
-    <p>Pick the festival whose sounds you want to hear.</p>
-    <div class="choose" id="choose"></div>
-    <button class="btn ghost small" id="pickBack">Back to scanning</button>
-  </div>
-</section>
 
 <div id="found" class="found"><div class="plate"><div class="stamp" id="foundStamp">祭</div><b id="foundName"></b><span id="foundSub"></span></div></div>
 

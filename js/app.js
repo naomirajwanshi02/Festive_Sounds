@@ -10,8 +10,6 @@ let phase = 'perm';
 const show = (id) => document.querySelectorAll('.screen').forEach((s) => s.classList.toggle('on', s.id === id));
 const overlay = (id, on) => $(id).classList.toggle('on', on);
 
-// the manual "choose" buttons come from the festival list
-$('choose').innerHTML = FESTIVALS.map((f) => `<a class="btn ghost" href="${openUrl(f)}">${f.name} · ${f.jp}</a>`).join('');
 
 function openFestival(f){
   phase = 'found';
@@ -52,7 +50,7 @@ async function askCamera(){
   } finally { $('permBtn').disabled = false; }
 }
 async function openScan(){
-  phase = 'scan'; show(null); overlay('guide', true); $('scanRetry').hidden = true;
+  phase = 'scan'; show(null); overlay('guide', true);
   if (scanning()) return;
   try {
     await scan($('ar'), FESTIVALS.length, {
@@ -62,15 +60,11 @@ async function openScan(){
   } catch (err) {
     console.error(err);
     const msg = String(err?.message || err?.name || err || '');
-    $('scanStatus').textContent = /mind|fetch|404/i.test(msg) ? `Could not load the picture data (${msg}).` : 'Camera not available. Allow camera access, then tap Try again.';
-    $('scanRetry').hidden = false;
+    $('scanStatus').textContent = /mind|fetch|404/i.test(msg) ? `Could not load the picture data (${msg}).` : 'Camera not available. Allow camera access for this site, then reload the page.';
   }
 }
 
 $('permBtn').addEventListener('click', askCamera);
-$('scanRetry').addEventListener('click', () => { stopScan(); openScan(); });
-$('scanSkip').addEventListener('click', () => { stopScan(); overlay('guide', false); show('pick'); });
-$('pickBack').addEventListener('click', () => { show(null); openScan(); });
 
-if (q.has('pick')) show('pick'); else openPerm();
+openPerm();
 window.__hub = { openFestival, FESTIVALS };
