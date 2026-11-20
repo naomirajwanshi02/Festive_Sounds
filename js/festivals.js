@@ -8,9 +8,9 @@
 const BASE = 'https://naomirajwanshi02.github.io/';
 
 export const FESTIVALS = [
-  { index: 0, id: 'nebuta', name: 'Nebuta', jp: 'ねぶた', place: 'Aomori', stamp: '祭',
+  { index: 0, id: 'nebuta', name: 'Nebuta', place: 'Aomori',
     url: BASE + 'Nebuta_Festive_Sounds/', picture: BASE + 'Nebuta_Festive_Sounds/target.png' },
-  { index: 1, id: 'gion', name: 'Gion Matsuri', jp: '祇園祭', place: 'Kyoto', stamp: '鉾',
+  { index: 1, id: 'gion', name: 'Gion Matsuri', place: 'Kyoto',
     url: BASE + 'Gion_Matsuri_Festive_Sounds/', picture: BASE + 'Gion_Matsuri_Festive_Sounds/target.png' },
 ];
 

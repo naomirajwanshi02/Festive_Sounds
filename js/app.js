@@ -15,9 +15,8 @@ function openFestival(f){
   phase = 'found';
   stopScan();
   overlay('guide', false);
-  $('foundStamp').textContent = f.stamp;
   $('foundName').textContent = f.name;
-  $('foundSub').textContent = `${f.jp} · ${f.place}`;
+  $('foundSub').textContent = `${f.place}`;
   overlay('found', true);
   try { navigator.vibrate?.(40); } catch { /* no vibration */ }
   if (!q.has('nogo')) setTimeout(() => location.replace(openUrl(f)), 1100);

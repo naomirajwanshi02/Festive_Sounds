@@ -17,7 +17,7 @@ export async function scan(container, count, { onStatus, onFound }){
   onStatus('Starting camera…');
   try { await mindar.start(); } catch (e){ stopScan(); throw e || new Error('camera unavailable'); }
   mindar.renderer.setAnimationLoop(() => mindar.renderer.render(mindar.scene, mindar.camera));
-  onStatus('Looking for a festival picture…');
+  onStatus('Looking for a picture…');
 }
 
 export const scanning = () => !!current;
